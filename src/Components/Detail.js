@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Stack, Typography } from '@mui/material'
+import { Box, Button, Stack, Typography } from '@mui/material'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import bodyPart from '../assets/icons/body-part.png'
@@ -8,11 +8,11 @@ import equipment from '../assets/icons/equipment.png'
 const Detail = () => {
 
   const exerciseDetail = useSelector(state => state.allExercises.exerciseDetail)
-  console.log(exerciseDetail)
+  // console.log(exerciseDetail)
 
 
   return (
-    <Box style={{ display: 'flex', justifyContent: 'center' }} mt={-5}>
+    <Box style={{ display: 'flex', justifyContent: 'center' }} mt={0}>
       <Stack sx={{ flexDirection: { xs: 'column', sm: 'row' }, width: { lg: '80%' }, backgroundColor: "##fff"}}>
         <Stack sx={{ width: { sm: '55%' } }}>
           <img src={exerciseDetail.gifUrl} alt='exericse' />

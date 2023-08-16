@@ -4,10 +4,11 @@ import { useSelector } from "react-redux";
 import ExerciseCard from "./ExerciseCard";
 
 const Exercises = () => {
-
   const allExercises = useSelector((state) => state.allExercises.allExercises);
   const [paginationCount, setPaginationCount] = useState(1);
-  const selectedBodyPart = useSelector((state) => state.allExercises.selectedBodyPart);
+  const selectedBodyPart = useSelector(
+    (state) => state.allExercises.selectedBodyPart
+  );
   const searchText = useSelector((state) => state.allExercises.setSearchText);
   const [exercisesToDisplay, setExercisesToDisplay] = useState(allExercises);
 
@@ -18,8 +19,10 @@ const Exercises = () => {
   const setCurrentExercisesFn = () => {
     const indexOfLastExercise = currentPageNumber * 8;
     const indexOfFirstExercise = indexOfLastExercise - 8;
-    setCurrentExercises(exercisesToDisplay.slice(indexOfFirstExercise, indexOfLastExercise));
-  }
+    setCurrentExercises(
+      exercisesToDisplay.slice(indexOfFirstExercise, indexOfLastExercise)
+    );
+  };
 
   const setExercisesToDisplayFn = () => {
     var tempArr = [];
@@ -45,7 +48,7 @@ const Exercises = () => {
     } else if (searchText !== "") {
       if (searchText === "all") {
         setExercisesToDisplay(allExercises);
-        setPaginationCount(Math.ceil(allExercises.length / 8))
+        setPaginationCount(Math.ceil(allExercises.length / 8));
         setCurrentPageNumber(1);
         handleChange();
         return;
@@ -62,7 +65,7 @@ const Exercises = () => {
       });
     }
     setExercisesToDisplay(tempArr);
-    setPaginationCount(Math.ceil(tempArr.length / 8))
+    setPaginationCount(Math.ceil(tempArr.length / 8));
     setCurrentPageNumber(1);
     handleChange();
   };
@@ -71,12 +74,16 @@ const Exercises = () => {
     setCurrentPageNumber(value);
     setCurrentExercisesFn();
 
-    window.scrollTo({ top: 1060, behavior: "smooth" })
+    if (window.innerWidth < 600) {
+      window.scrollTo({ top: 710, behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 1120, behavior: "smooth" });
+    }
   };
 
   useEffect(() => {
     setCurrentExercisesFn();
-  }, [exercisesToDisplay, currentPageNumber])
+  }, [exercisesToDisplay, currentPageNumber]);
 
   useEffect(() => {
     setExercisesToDisplayFn();
@@ -91,8 +98,23 @@ const Exercises = () => {
         currentExercises.map((exercise) => {
           return <ExerciseCard exercise={exercise} key={exercise.id} />;
         })}
-      <Grid item xs={12} mt={2} mb={2} display={'flex'} justifyContent={'center'}>
-        <Pagination count={paginationCount} variant="outlined" page={currentPageNumber} shape="rounded" onChange={handleChange} color="primary" size="small" />
+      <Grid
+        item
+        xs={12}
+        mt={2}
+        mb={2}
+        display={"flex"}
+        justifyContent={"center"}
+      >
+        <Pagination
+          count={paginationCount}
+          variant="outlined"
+          page={currentPageNumber}
+          shape="rounded"
+          onChange={handleChange}
+          color="primary"
+          size="small"
+        />
       </Grid>
     </Grid>
   );

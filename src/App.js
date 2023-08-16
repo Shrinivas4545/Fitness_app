@@ -6,8 +6,8 @@ import Home from "./Pages/Home";
 import './Theme/theme.css'
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom"
 import axios from "axios"
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from "react";
+import { useDispatch } from 'react-redux';
 import { setAllExercises, setBodyParts } from "./Redux/Exercises/actionExercises";
 
 function App() {
@@ -25,7 +25,6 @@ function App() {
   const fetchAllExercises = async () => {
     const bodyParts = ["all"];
     try {
-      debugger
       //fetch serializedData from localStorage
       //check if data is in localStorage
       if (JSON.parse(localStorage.getItem('allExercises')) === null) {

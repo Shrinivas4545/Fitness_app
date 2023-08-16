@@ -14,50 +14,72 @@ const HeroBanner = () => {
     };
   }, [windowWidth]);
 
+  const handleClick = () => {
+    if (window.innerWidth < 600) {
+      window.scrollTo({ top: 710, behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 1120, behavior: "smooth" });
+    }
+  };
+
   return (
-    <Box width={"100%"}>
-      <Stack ml={{ lg: '200px' }}>
+    <Box
+      width={"100%"}
+      mt={"60px"}
+      sx={{
+        display: { xs: "flex" },
+        justifyContent: { xs: "center", sm: "flex-start" },
+      }}
+    >
+      <Stack ml={{ lg: "200px" }}>
         <Typography
           variant="h6"
           mt={{ xs: "-30px", sm: "100px" }}
-          ml={6}
+          ml={{ sm: "32px" }}
           sx={{
             fontWeight: "600",
-            color: "#FF2625"
+            color: "#FF2625",
           }}
         >
           Fitness Club
         </Typography>
         <Typography
           variant="h4"
-          mt={{ xs: '10px', sm: '24px' }}
-          ml={6}
+          mt={{ xs: "10px", sm: "24px" }}
+          ml={{ sm: "32px" }}
           sx={{
-            fontWeight: "600"
+            fontWeight: "600",
           }}
         >
           Sweat, Smile <br />
           And Repeat
         </Typography>
-        <Typography mt={{ xs: '10px', sm: '24px' }} ml={6}>
+        <Typography mt={{ xs: "10px", sm: "24px" }} ml={{ sm: "32px" }}>
           Click here to explore
         </Typography>
         <Button
           variant="contained"
           color="error"
-          onClick={() => window.scrollTo({ top: 1060, behavior: "smooth" })}
+          // onClick={() => window.scrollTo({ top: 1060, behavior: "smooth" })}
+          onClick={() => handleClick()}
           sx={{
-            marginTop: { xs: '5px', sm: '16px' },
-            marginLeft: "45px",
+            marginTop: { xs: "5px", sm: "16px" },
+            marginLeft: { sm: "30px" },
             textTransform: "none",
-            width: '200px'
+            width: "200px",
           }}
         >
           <Typography variant="h6">Explore Exercises</Typography>
         </Button>
       </Stack>
-      {window.innerWidth > 760 && (
-        <Box sx={{ position: 'absolute', right: { xs: '10px', md: '250px' }, top: "70px", }}>
+      {window.innerWidth > 764 && (
+        <Box
+          sx={{
+            position: "absolute",
+            right: { xs: "10px", md: "50px" },
+            top: "70px",
+          }}
+        >
           <img
             src={BannerImage}
             alt="BannerImage"
