@@ -72,25 +72,45 @@ const HeroBanner = () => {
           <Typography variant="h6">Explore Exercises</Typography>
         </Button>
       </Stack>
-      {window.innerWidth > 764 && (
+      {window.innerWidth > 764 ?
+        (
+          <Box
+            sx={{
+              position: "absolute",
+              right: { xs: "10px", md: "50px" },
+              top: "70px",
+            }}
+          >
+            <img
+              src={BannerImage}
+              alt="BannerImage"
+              style={{
+                width: "500px",
+                height: "600px",
+                marginTop: "10px",
+              }}
+            />
+          </Box>
+        ) :
+        window.innerWidth >= 600 &&
         <Box
           sx={{
             position: "absolute",
             right: { xs: "10px", md: "50px" },
-            top: "70px",
+            top: "140px",
           }}
         >
           <img
             src={BannerImage}
             alt="BannerImage"
             style={{
-              width: "500px",
-              height: "600px",
+              width: "330px",
+              height: "430px",
               marginTop: "10px",
             }}
           />
         </Box>
-      )}
+      }
     </Box>
   );
 };
