@@ -25,17 +25,17 @@ function App() {
   const fetchAllExercises = async () => {
     const bodyParts = ["all"];
     try {
-      //fetch serializedData from localStorage
-      //check if data is in localStorage
-      if (JSON.parse(localStorage.getItem('allExercises')) === null) {
+      //fetch serializedData from sessionStorage
+      //check if data is in sessionStorage
+      if (JSON.parse(sessionStorage.getItem('allExercises')) === null) {
         //if not axios call
         const response = await axios.request(options);
-        //set to localStorage
-        localStorage.setItem("allExercises", JSON.stringify(response.data))
+        //set to sessionStorage
+        sessionStorage.setItem("allExercises", JSON.stringify(response.data))
       }
 
-      if (JSON.parse(localStorage.getItem('allExercises')).length !== 0) {
-        JSON.parse(localStorage.getItem('allExercises')).map((exercise) => {
+      if (JSON.parse(sessionStorage.getItem('allExercises')).length !== 0) {
+        JSON.parse(sessionStorage.getItem('allExercises')).map((exercise) => {
           if (!bodyParts.includes(exercise.bodyPart)) {
             bodyParts.push(exercise.bodyPart)
           }
@@ -43,12 +43,11 @@ function App() {
       }
       //set to store allExercises, bodyPart 
       dispatch(setBodyParts(bodyParts));
-      dispatch(setAllExercises(JSON.parse(localStorage.getItem('allExercises'))))
+      dispatch(setAllExercises(JSON.parse(sessionStorage.getItem('allExercises'))))
     } catch (error) {
       console.error(error);
     }
 
-    console.log(bodyParts)
   };
 
   useEffect(() => {

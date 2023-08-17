@@ -76,7 +76,10 @@ const Exercises = () => {
 
     if (window.innerWidth < 600) {
       window.scrollTo({ top: 710, behavior: "smooth" });
-    } else {
+    } else if (window.innerWidth >= 600 && window.innerWidth < 764) {
+      window.scrollTo({top: 950, behavior: 'smooth'})
+    }
+    else {
       window.scrollTo({ top: 1120, behavior: "smooth" });
     }
   };
