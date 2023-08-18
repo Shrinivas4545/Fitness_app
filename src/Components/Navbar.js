@@ -17,18 +17,17 @@ const Navbar = () => {
     <Stack
       direction={"row"}
       pt={0}
-      pl={1}
       pb={1}
       className={isDarkTheme ? "dark-navbar" : "light-navbar"}
       sx={{
         gap: {
-          xs: "40px",
+          xs: "20px",
           md: "130px",
         },
         width: "100%",
         top: "0px",
-        position: "sticky", // Change this
-        zIndex: 100, // Add this
+        position: "sticky",
+        zIndex: 100,
         // backgroundColor: isDarkTheme ? "#333333" : "white",
         boxShadow: "0px 4px 5px rgba(0, 0, 0, 0.2)",
       }}
@@ -60,7 +59,7 @@ const Navbar = () => {
           <Typography variant="h6">Exercises</Typography>
         </a>
       </Stack>
-      <Stack width={"100%"} mr={2} display={"flex"} justifyContent={"flex-end"}>
+      <Stack width={"100%"} mr={1} display={"flex"} justifyContent={"flex-end"}>
         <Darkmode />
       </Stack>
     </Stack>
