@@ -22,13 +22,13 @@ const ExerciseCard = ({ exercise }) => {
                     <img src={exercise.gifUrl} loading='lazy' alt='exercises' style={{ width: "95%", height: "300px", borderRadius: '5px' }} />
                 </Box>
                 <Stack direction={'row'} ml={"50px"} mt={2}>
-                    <Box sx={{ backgroundColor: "#64ffda", padding: "5px", borderRadius: '10px', display: 'flex', justifyContent: 'center' }}>
+                    <Box sx={{ backgroundColor: "#c62828", padding: "5px", borderRadius: '10px', display: 'flex', justifyContent: 'center' }}>
                         <Typography textTransform={'capitalize'}>{exercise.target}</Typography>
                     </Box>
                 </Stack>
                 <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '5px' }}>
                     <Box sx={{ width: "70%", justifyContent: 'center', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}  >
-                        <Typography variant='h6' textAlign={'center'} textTransform={'capitalize'} fontWeight={'700'}>{exercise.name}</Typography>
+                        <Typography variant='h6' textAlign={'center'} sx={{color: 'black'}} textTransform={'capitalize'} fontWeight={'700'}>{exercise.name}</Typography>
                     </Box>
                 </Box>
             </Stack>

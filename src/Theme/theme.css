@@ -1,15 +1,26 @@
 .dark-theme {
     background-color: #333333;
     color: white;
-}
-
-.light-theme {
+  }
+  
+  .light-theme {
     background-color: white;
     color: black;
-}
-
-.containerDarkmode {
-    width: '100%';
+  }
+  
+  .containerDarkmode {
+    width: "100%";
     display: flex;
-    justify-content: flex-end
-}
+    justify-content: flex-end;
+  }
+  
+  .dark-navbar {
+    background-color: #333333;
+    color: aliceblue;
+  }
+  
+  .light-navbar {
+    background-color: white;
+    color: black;
+  }
+  

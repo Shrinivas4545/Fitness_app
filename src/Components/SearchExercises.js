@@ -69,6 +69,7 @@ const SearchExercises = () => {
             renderInput={(params) => (
               <TextField
                 placeholder="Search Exercise"
+                sx={{color: 'white'}}
                 {...params}
                 InputProps={{
                   ...params.InputProps,
