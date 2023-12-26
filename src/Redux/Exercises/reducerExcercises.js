@@ -14,7 +14,7 @@ import {
     selectedBodyPart: "",
     setSearchText: "",
     exerciseDetail: {},
-    theme: "",
+    theme: "dark-theme",
   };
   
   const exercisesReducer = (state = initialState, action) => {

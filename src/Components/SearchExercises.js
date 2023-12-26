@@ -1,9 +1,8 @@
 import {
   Autocomplete,
-  Button,
   Stack,
   TextField,
-  Typography
+  Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import BodyParts from "./BodyParts";
@@ -15,9 +14,11 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 
 const SearchExercises = () => {
+  const currentTheme = useSelector((state) => state.allExercises.theme)
   var [value, setValue] = useState();
   const dispatch = useDispatch();
   const allExercises = useSelector((state) => state.allExercises.allExercises);
+
 
   const searchArray = [];
 
@@ -40,7 +41,7 @@ const SearchExercises = () => {
     if (window.innerWidth < 600) {
       window.scrollTo({ top: 710, behavior: "smooth" });
     } else if (window.innerWidth >= 600 && window.innerWidth < 764) {
-      window.scrollTo({top: 950, behavior: 'smooth'})
+      window.scrollTo({ top: 950, behavior: 'smooth' })
     }
     else {
       window.scrollTo({ top: 1120, behavior: "smooth" });
@@ -50,8 +51,8 @@ const SearchExercises = () => {
   // const btnSearchHandle = () => { };
 
   return (
-    <Stack mt={{xs: '50px', sm: '250px'}} direction={"column"}>
-      <Typography fontSize={{sx: '25px', sm:'30px'}} fontWeight={"600"} textAlign={"center"}>
+    <Stack mt={{ xs: '50px', sm: '250px' }} direction={"column"}>
+      <Typography fontSize={{ sx: '25px', sm: '30px' }} fontWeight={"600"} textAlign={"center"} color={(currentTheme === "dark-theme") && "white"}>
         Awesome Exercises You <br />
         Should Know
       </Typography>
@@ -62,14 +63,14 @@ const SearchExercises = () => {
         justifyContent={"center"}
         mb={3}
       >
-        <Stack width={"70%"}>
+        <Stack width={{xs: "70%", md: "50%"}}>
           <Autocomplete
             options={searchArray}
             value={value}
             renderInput={(params) => (
               <TextField
                 placeholder="Search Exercise"
-                sx={{color: 'white'}}
+                sx={{ color: 'white' }}
                 {...params}
                 InputProps={{
                   ...params.InputProps,

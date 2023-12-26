@@ -31,7 +31,7 @@ const SimilarExercises = () => {
   useEffect(() => {
     generateSimilarExercises();
     // console.log(similarExercises);
-    handleChange();
+    // handleChange();
   }, [currentExecise, allExercises]);
 
   const handleChange = (event, value = 1) => {
@@ -42,7 +42,12 @@ const SimilarExercises = () => {
       similarExercises.slice(startIndexNumber, endIndexNumber)
     );
 
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (window.innerWidth < 600) {
+      window.scrollTo({ top: 710, behavior: "smooth" });
+    } else if (window.innerWidth >= 600) {
+      window.scrollTo({ top: 610, behavior: 'smooth' })
+    }
+
   };
 
   return (

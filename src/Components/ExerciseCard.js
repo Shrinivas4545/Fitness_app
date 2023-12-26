@@ -16,8 +16,8 @@ const ExerciseCard = ({ exercise }) => {
     }
 
     return (
-        <Grid item xs={12} sm={6} md={4} type={Button} onClick={() => handleClick()}>
-            <Stack sx={{ borderRadius: '10px', backgroundColor: "white", height: "400px", '&:hover': { transform: 'scale(1.05,1.05)' }, transition: "transform 1s", borderStyle: 'outset' }} >
+        <Grid item xs={12} sm={6} md={4} type={Button} onClick={() => handleClick()} sx={{cursor: "pointer"}} >
+            <Stack sx={{ borderRadius: '10px', backgroundColor: "white", height: "400px", '&:hover': { transform: 'scale(0.97,0.97)' }, transition: "transform 0.5s", borderStyle: 'outset' }} >
                 <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
                     <img src={exercise.gifUrl} loading='lazy' alt='exercises' style={{ width: "95%", height: "300px", borderRadius: '5px' }} />
                 </Box>

@@ -2,16 +2,23 @@ import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import ExerciseDetail from "./Pages/ExerciseDetail";
 import Home from "./Pages/Home";
-// import Darkmode from "./Theme/Darkmode";
 import './Theme/theme.css'
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom"
 import axios from "axios"
 import { useEffect } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setAllExercises, setBodyParts } from "./Redux/Exercises/actionExercises";
+import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 function App() {
   const dispatch = useDispatch();
+  const currentTheme = useSelector((state) => state.allExercises.theme)
 
   const options = {
     method: 'GET',
@@ -21,7 +28,7 @@ function App() {
       'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
     }
   };
-
+     
   const fetchAllExercises = async () => {
     const bodyParts = ["all"];
     try {
@@ -51,25 +58,24 @@ function App() {
   };
 
   useEffect(() => {
-
     fetchAllExercises();
-
   }, [])
 
   return (
-    <div>
-      {/* <Darkmode /> */}
-      <Navbar />
-      <div style={{ marginTop: '60px' }}>
+    <ThemeProvider theme={(currentTheme === "dark-theme") && theme}>
+      <CssBaseline />
+      <Box bgcolor={(currentTheme === "dark-theme") && "#1e1e1e"}>
+
         <Router>
+          <Navbar />
           <Routes>
             <Route path="/" exact element={<Home />} />
             <Route path="/exercise/:exerciseId" exact element={<ExerciseDetail />} />
           </Routes>
         </Router>
         <Footer />
-      </div>
-    </div>
+      </Box>
+    </ThemeProvider>
   );
 }
 

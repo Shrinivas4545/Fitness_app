@@ -5,10 +5,11 @@ import { Typography } from '@mui/material'
 
 const BodyParts = () => {
     const bodyParts = useSelector(state => state.allExercises.bodyParts)
-
+    const currentTheme = useSelector((state) => state.allExercises.theme)
+    
     return (
         <div>
-            <Typography variant='h6' ml={2}>Select bodypart:</Typography>
+            <Typography variant='h6' ml={2} color={(currentTheme === "dark-theme") && "white"}>Select bodypart:</Typography>
             <div style={{ display: 'flex', overflow: 'auto', padding: '10px', borderRadius: '20px', paddingBottom: '20px' }}>
                 <div style={{ display: 'flex', gap: "20px" }}>
                     {bodyParts.map((bodyPart) => (

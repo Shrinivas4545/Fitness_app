@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import "./theme.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setTheme } from "../Redux/Exercises/actionExercises";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 
 const Darkmode = () => {
     const dispatch = useDispatch();
-    const [theme, setThemee] = useState("light-theme");
+    const currentTheme = useSelector((state) => state.allExercises.theme)
+    const [theme, setThemee] = useState(currentTheme);
     const toggleTheme = () => {
         if (theme === "light-theme") {
             setThemee("dark-theme");
