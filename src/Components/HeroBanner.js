@@ -14,8 +14,7 @@ const theme = createTheme({
       xl: 1536,
     },
   },
-  
-});
+  });
 
 const HeroBanner = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

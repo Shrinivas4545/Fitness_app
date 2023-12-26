@@ -28,7 +28,7 @@ function App() {
       'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
     }
   };
-     
+
   const fetchAllExercises = async () => {
     const bodyParts = ["all"];
     try {
@@ -65,7 +65,6 @@ function App() {
     <ThemeProvider theme={(currentTheme === "dark-theme") && theme}>
       <CssBaseline />
       <Box bgcolor={(currentTheme === "dark-theme") && "#1e1e1e"}>
-
         <Router>
           <Navbar />
           <Routes>
