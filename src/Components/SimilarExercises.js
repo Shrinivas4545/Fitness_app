@@ -30,8 +30,6 @@ const SimilarExercises = () => {
 
   useEffect(() => {
     generateSimilarExercises();
-    // console.log(similarExercises);
-    // handleChange();
   }, [currentExecise, allExercises]);
 
   const handleChange = (event, value = 1) => {
@@ -41,12 +39,6 @@ const SimilarExercises = () => {
     setCurrentPageExercises(
       similarExercises.slice(startIndexNumber, endIndexNumber)
     );
-
-    if (window.innerWidth < 600) {
-      window.scrollTo({ top: 710, behavior: "smooth" });
-    } else if (window.innerWidth >= 600) {
-      window.scrollTo({ top: 610, behavior: 'smooth' })
-    }
 
   };
 
@@ -69,7 +61,7 @@ const SimilarExercises = () => {
       <Grid
         item
         xs={12}
-        mt={2}
+        mt={3}
         mb={2}
         display={"flex"}
         justifyContent={"center"}
@@ -79,6 +71,7 @@ const SimilarExercises = () => {
           variant="outlined"
           shape="rounded"
           onChange={handleChange}
+          size="large"
         />
       </Grid>
     </Box>

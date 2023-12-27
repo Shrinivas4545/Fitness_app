@@ -18,8 +18,6 @@ const SearchExercises = () => {
   var [value, setValue] = useState();
   const dispatch = useDispatch();
   const allExercises = useSelector((state) => state.allExercises.allExercises);
-
-
   const searchArray = [];
 
   useEffect(() => {
@@ -48,8 +46,6 @@ const SearchExercises = () => {
     }
   };
 
-  // const btnSearchHandle = () => { };
-
   return (
     <Stack mt={{ xs: '50px', sm: '250px' }} direction={"column"}>
       <Typography fontSize={{ sx: '25px', sm: '30px' }} fontWeight={"600"} textAlign={"center"} color={(currentTheme === "dark-theme") && "white"}>
@@ -63,7 +59,7 @@ const SearchExercises = () => {
         justifyContent={"center"}
         mb={3}
       >
-        <Stack width={{xs: "70%", md: "50%"}}>
+        <Stack width={{ xs: "70%", md: "50%" }}>
           <Autocomplete
             options={searchArray}
             value={value}
@@ -84,19 +80,6 @@ const SearchExercises = () => {
             freeSolo
           />
         </Stack>
-        {/* <Button
-          variant="contained"
-          color="error"
-          onClick={() => btnSearchHandle()}
-          sx={{
-            textTransform: "none",
-            width: { sx: "100px", sm: "175px", md: "300px" }
-          }}
-        >
-          <Typography variant="h6" fontWeight={"600"}>
-            Search
-          </Typography>
-        </Button> */}
       </Stack>
       <BodyParts />
     </Stack>

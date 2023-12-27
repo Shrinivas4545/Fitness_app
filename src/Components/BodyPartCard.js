@@ -31,10 +31,10 @@ const BodyPartCard = ({ bodyPart }) => {
           src={all}
           alt="All"
           style={{
-            width: "90%",
+            width: "100%",
             height: "60%",
-            marginBottom: "30px",
-            marginTop: "30px",
+            marginBottom: "20px",
+            marginTop: "20px",
           }}
         />
       );
@@ -46,10 +46,10 @@ const BodyPartCard = ({ bodyPart }) => {
           src={weist}
           alt="Weist"
           style={{
-            width: "90%",
+            width: "100%",
             height: "60%",
-            marginBottom: "30px",
-            marginTop: "30px",
+            marginBottom: "20px",
+            marginTop: "20px",
           }}
         />
       );
@@ -61,10 +61,10 @@ const BodyPartCard = ({ bodyPart }) => {
           src={lowerLeg}
           alt="Weist"
           style={{
-            width: "90%",
+            width: "100%",
             height: "60%",
-            marginBottom: "30px",
-            marginTop: "30px",
+            marginBottom: "20px",
+            marginTop: "20px",
           }}
         />
       );
@@ -76,10 +76,10 @@ const BodyPartCard = ({ bodyPart }) => {
           src={upperLeg}
           alt="Upper legs"
           style={{
-            width: "90%",
+            width: "100%",
             height: "60%",
-            marginBottom: "30px",
-            marginTop: "30px",
+            marginBottom: "20px",
+            marginTop: "20px",
           }}
         />
       );
@@ -91,10 +91,10 @@ const BodyPartCard = ({ bodyPart }) => {
           src={back}
           alt="Back"
           style={{
-            width: "90%",
+            width: "100%",
             height: "60%",
-            marginBottom: "30px",
-            marginTop: "30px",
+            marginBottom: "20px",
+            marginTop: "20px",
           }}
         />
       );
@@ -106,10 +106,10 @@ const BodyPartCard = ({ bodyPart }) => {
           src={Icon}
           alt="Lower leg"
           style={{
-            width: "90%",
+            width: "100%",
             height: "60%",
-            marginBottom: "30px",
-            marginTop: "30px",
+            marginBottom: "20px",
+            marginTop: "20px",
           }}
         />
       );
@@ -121,10 +121,10 @@ const BodyPartCard = ({ bodyPart }) => {
           src={chest}
           alt="Chest"
           style={{
-            width: "90%",
+            width: "100%",
             height: "60%",
-            marginBottom: "30px",
-            marginTop: "30px",
+            marginBottom: "20px",
+            marginTop: "20px",
           }}
         />
       );
@@ -135,10 +135,10 @@ const BodyPartCard = ({ bodyPart }) => {
           src={triceps}
           alt="Upper Arm"
           style={{
-            width: "90%",
+            width: "100%",
             height: "60%",
-            marginBottom: "30px",
-            marginTop: "30px",
+            marginBottom: "20px",
+            marginTop: "20px",
           }}
         />
       );
@@ -149,10 +149,10 @@ const BodyPartCard = ({ bodyPart }) => {
           src={cardio}
           alt="Cardio"
           style={{
-            width: "90%",
+            width: "100%",
             height: "60%",
-            marginBottom: "30px",
-            marginTop: "30px",
+            marginBottom: "20px",
+            marginTop: "20px",
           }}
         />
       );
@@ -163,10 +163,10 @@ const BodyPartCard = ({ bodyPart }) => {
           src={shoulder}
           alt="Shoulders"
           style={{
-            width: "90%",
+            width: "100%",
             height: "60%",
-            marginBottom: "30px",
-            marginTop: "30px",
+            marginBottom: "20px",
+            marginTop: "20px",
           }}
         />
       );
@@ -177,10 +177,10 @@ const BodyPartCard = ({ bodyPart }) => {
           src={lowerArm}
           alt="Lower Arm"
           style={{
-            width: "90%",
+            width: "100%",
             height: "60%",
-            marginBottom: "30px",
-            marginTop: "30px",
+            marginBottom: "20px",
+            marginTop: "20px",
           }}
         />
       );
@@ -191,10 +191,10 @@ const BodyPartCard = ({ bodyPart }) => {
           src={neck}
           alt="Neck"
           style={{
-            width: "90%",
+            width: "100%",
             height: "60%",
-            marginBottom: "30px",
-            marginTop: "30px",
+            marginBottom: "20px",
+            marginTop: "20px",
           }}
         />
       );

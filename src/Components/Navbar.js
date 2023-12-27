@@ -59,7 +59,7 @@ const Navbar = () => {
           <Typography variant="h6">Exercises</Typography>
         </Button>
       </Stack>
-      <Stack width={"100%"} mr={1} display={"flex"} justifyContent={"flex-end"}>
+      <Stack width={"100%"} mr={1} display={"flex"} justifyContent={"center"} alignItems={"flex-end"} mt={1}>
         <Darkmode />
       </Stack>
     </Stack>

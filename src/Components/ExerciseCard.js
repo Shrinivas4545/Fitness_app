@@ -16,14 +16,14 @@ const ExerciseCard = ({ exercise }) => {
     }
 
     return (
-        <Grid item xs={12} sm={6} md={4} type={Button} onClick={() => handleClick()} sx={{cursor: "pointer"}} >
+        <Grid item xs={12} sm={6} md={4} lg={3} type={Button} onClick={() => handleClick()} sx={{cursor: "pointer"}} >
             <Stack sx={{ borderRadius: '10px', backgroundColor: "white", height: "400px", '&:hover': { transform: 'scale(0.97,0.97)' }, transition: "transform 0.5s", borderStyle: 'outset' }} >
                 <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
                     <img src={exercise.gifUrl} loading='lazy' alt='exercises' style={{ width: "95%", height: "300px", borderRadius: '5px' }} />
                 </Box>
                 <Stack direction={'row'} ml={"50px"} mt={2}>
                     <Box sx={{ backgroundColor: "#c62828", padding: "5px", borderRadius: '10px', display: 'flex', justifyContent: 'center' }}>
-                        <Typography textTransform={'capitalize'}>{exercise.target}</Typography>
+                        <Typography textTransform={'capitalize'} color="white">{exercise.target}</Typography>
                     </Box>
                 </Stack>
                 <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '5px' }}>

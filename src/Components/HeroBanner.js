@@ -60,7 +60,7 @@ const HeroBanner = () => {
             }}
           >
             Fitness Club
-          </Typography>
+          </Typography> 
           <Typography
             variant="h4"
             mt={{ xs: "10px", sm: "24px" }}
